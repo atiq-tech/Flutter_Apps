@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_register/blog/details_page.dart';
 import 'package:firebase_register/pages/home_page.dart';
 import 'package:firebase_register/pages/register_page.dart';
 import 'package:flutter/material.dart';

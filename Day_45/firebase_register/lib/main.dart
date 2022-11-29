@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_register/blog/details_page.dart';
 import 'package:firebase_register/pages/home_page.dart';
 import 'package:firebase_register/pages/splash_page.dart';
 import 'package:flutter/material.dart';

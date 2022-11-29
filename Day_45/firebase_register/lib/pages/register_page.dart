@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_register/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -25,13 +26,25 @@ class _RegisterPageState extends State<RegisterPage> {
       "age": _ageController.text,
       "address": _addressController.text
     }));
+    _nameController.clear();
+    _phoneController.clear();
+    _ageController.clear();
+    _addressController.clear();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 255, 228),
         appBar: AppBar(
-          title: Text("Registation Form"),
+          backgroundColor: Color.fromARGB(255, 243, 247, 194),
+          title: Text(
+            "Registation Form",
+            style: TextStyle(
+                color: Color.fromARGB(255, 1, 43, 30),
+                fontWeight: FontWeight.w900,
+                fontSize: 25),
+          ),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -43,7 +56,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: _nameController,
                   decoration: InputDecoration(
                       hintText: "Enter your name",
+                      hintStyle: TextStyle(
+                          color: Color.fromARGB(255, 189, 4, 142),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15),
                       labelText: "Name",
+                      labelStyle: TextStyle(
+                          color: Color.fromARGB(255, 31, 1, 23),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 18),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
                       )),
@@ -55,7 +76,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: _phoneController,
                   decoration: InputDecoration(
                       labelText: "Phone",
+                      labelStyle: TextStyle(
+                          color: Color.fromARGB(255, 31, 1, 23),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 18),
                       hintText: "Enter your phone number",
+                      hintStyle: TextStyle(
+                          color: Color.fromARGB(255, 189, 4, 142),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
                       )),
@@ -67,7 +96,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: _ageController,
                   decoration: InputDecoration(
                       labelText: "Age",
+                      labelStyle: TextStyle(
+                          color: Color.fromARGB(255, 31, 1, 23),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 18),
                       hintText: "Enter your age",
+                      hintStyle: TextStyle(
+                          color: Color.fromARGB(255, 189, 4, 142),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
                       )),
@@ -79,7 +116,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: _addressController,
                   decoration: InputDecoration(
                       labelText: "Address",
+                      labelStyle: TextStyle(
+                          color: Color.fromARGB(255, 31, 1, 23),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 18),
                       hintText: "Enter your address",
+                      hintStyle: TextStyle(
+                          color: Color.fromARGB(255, 189, 4, 142),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
                       )),
@@ -89,14 +134,22 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.purple,
+                        backgroundColor: Color.fromARGB(255, 239, 247, 173),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         )),
                     onPressed: () {
                       addUser();
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
-                    child: Text("Register Now")),
+                    child: Text(
+                      "Register Now",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 1, 66, 46),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20),
+                    )),
               ],
             ),
           ),

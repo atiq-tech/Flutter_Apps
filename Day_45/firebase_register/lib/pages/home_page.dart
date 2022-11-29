@@ -19,10 +19,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: Text("Home Page"),
+      //   centerTitle: true,
+      // ),
       body: myPages[indexPages],
       bottomNavigationBar: CurvedNavigationBar(
         items: [
